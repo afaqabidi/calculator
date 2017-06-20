@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var numberOneButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
     enum Operators {
         case add
@@ -21,6 +22,8 @@ class ViewController: UIViewController {
     }
     
     var selectedOperator: Operators? = nil
+    var num1: Int = 0
+    var num2: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +40,34 @@ class ViewController: UIViewController {
     
     @IBAction func clearButton(_ sender: UIButton) {
         resultLabel.text = ""
+        num1 = 0
+        num2 = 0
+        addButton.isEnabled = true
     }
     
     @IBAction func add(_ sender: UIButton) {
         selectedOperator = .add
-        sender.tintColor = .black
+        sender.isEnabled = false
+        num1 = Int(resultLabel!.text!)!
+        resultLabel.text = ""
     }
+    
+    
+    @IBAction func equalAction(_ sender: UIButton) {
+        
+        if let selectedOperator = self.selectedOperator {
+            num2 = Int(resultLabel!.text!)!
+            switch selectedOperator {
+            case .add:
+                resultLabel.text = "\(num1 + num2)"
+                num1 = 0
+                num2 = 0
+                addButton.isEnabled = true
+            default: break
+            }
+        }
+    }
+    
     
 }
 
