@@ -9,17 +9,40 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var numberOneButton: UIButton!
+    
+    enum Operators {
+        case add
+        case subtract
+        case divide
+        case multiply
+    }
+    
+    var selectedOperator: Operators? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func doSomething(_ pressedButton: UIButton) {
+        
+        let number = Int(pressedButton.titleLabel!.text!)!
+        let previousValue = resultLabel.text ?? ""
+        resultLabel.text = previousValue + String(describing: number)
+        
     }
-
-
+    
+    @IBAction func clearButton(_ sender: UIButton) {
+        resultLabel.text = ""
+    }
+    
+    @IBAction func add(_ sender: UIButton) {
+        selectedOperator = .add
+        sender.tintColor = .black
+    }
+    
 }
 
