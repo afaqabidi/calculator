@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var numberOneButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var subtractButton: UIButton!
+    @IBOutlet weak var multiplyButton: UIButton!
+    @IBOutlet weak var divideButton: UIButton!
     
     enum Operators {
         case add
@@ -63,11 +66,53 @@ class ViewController: UIViewController {
                 num1 = 0
                 num2 = 0
                 addButton.isEnabled = true
-            default: break
+            case .subtract:
+                resultLabel.text = "\(num1 - num2)"
+                num1 = 0
+                num2 = 0
+                subtractButton.isEnabled = true
+            case .multiply:
+                resultLabel.text = "\(num1 * num2)"
+                num1 = 0
+                num2 = 0
+                multiplyButton.isEnabled = true
+            case .divide:
+                resultLabel.text = "\(num1 / num2)"
+                num1 = 0
+                num2 = 0
+                divideButton.isEnabled = true
             }
         }
     }
+
+    @IBAction func subtract(_ sender: UIButton) {
+        selectedOperator = .subtract
+        sender.isEnabled = false
+        num1 = Int(resultLabel!.text!)!
+        resultLabel.text = ""
+    }
     
-    
+    @IBAction func multiply(_ sender: UIButton) {
+        selectedOperator = .multiply
+        sender.isEnabled = false
+        num1 = Int(resultLabel!.text!)!
+        resultLabel.text = ""
+    }
+
+    @IBAction func divide(_ sender: UIButton) {
+        selectedOperator = .divide
+        sender.isEnabled = false
+        num1 = Int(resultLabel!.text!)!
+        resultLabel.text = ""
+    }
+
 }
+
+
+
+
+
+
+
+
 

@@ -69,6 +69,9 @@
                                                         <state key="normal" title="-">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="subtract:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QIg-ps-bbJ"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJc-yg-h6S">
                                                         <rect key="frame" x="192" y="0.0" width="64" height="67"/>
@@ -77,6 +80,9 @@
                                                         <state key="normal" title="x">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="multiply:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pIh-QX-VCd"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38q-8R-JZu">
                                                         <rect key="frame" x="256" y="0.0" width="64" height="67"/>
@@ -85,6 +91,9 @@
                                                         <state key="normal" title="/">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="divide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ERO-PP-C7U"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -249,8 +258,11 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="6ef-Qe-o8t" id="1Mc-Au-Epd"/>
+                        <outlet property="divideButton" destination="38q-8R-JZu" id="EYH-2M-gtr"/>
+                        <outlet property="multiplyButton" destination="JJc-yg-h6S" id="4jq-1i-XlA"/>
                         <outlet property="numberOneButton" destination="P99-Xp-Qdl" id="Sw8-Td-bdi"/>
                         <outlet property="resultLabel" destination="DpZ-Pa-uxe" id="dOD-F5-Jrh"/>
+                        <outlet property="subtractButton" destination="gz7-Vw-Ocw" id="TAU-HO-KsU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
