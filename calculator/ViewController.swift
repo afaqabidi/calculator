@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     var selectedOperator: Operators? = nil
     var num1: Int = 0
     var num2: Int = 0
+    var num3: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,9 +78,9 @@ class ViewController: UIViewController {
                 num2 = 0
                 multiplyButton.isEnabled = true
             case .divide:
-                resultLabel.text = "\(num1 / num2)"
+                resultLabel.text = "\(num1 / num3)"
                 num1 = 0
-                num2 = 0
+                num3 = 1
                 divideButton.isEnabled = true
             }
         }
